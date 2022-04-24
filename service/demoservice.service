@@ -1,0 +1,20 @@
+[Unit]
+Description=Terraform Tools Demo
+ConditionPathExists=/home/ubuntu/demoservice
+After=network.target
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu
+ExecStart=/home/ubuntu/demoservice
+Restart=on-failure
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=terraformtoolsdemo
+Environment=SERVER_PORT=8080
+Environment=DATABASE_FILE_PATH=images.db
+Environment=IMAGE_TABLE_NAME=images
+[Install]
+WantedBy=multi-user.target

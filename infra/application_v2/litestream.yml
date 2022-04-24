@@ -1,0 +1,4 @@
+dbs:
+  - path: /home/ubuntu/images.db
+    replicas:
+      - url: s3://terraform-tools-demo-dev/application/images.db
